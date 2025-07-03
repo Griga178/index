@@ -14,7 +14,7 @@
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = data;
 
-        const heroBtnDiv = tempDiv.getElementById('heroBtnContainer');
+        const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
         document.body.appendChild(heroBtnDiv);
 
         tempDiv.querySelectorAll('style').forEach(styleEl => {
