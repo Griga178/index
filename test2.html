@@ -5,14 +5,33 @@
     <title></title>
   </head>
   <body>
-    <h3>test2</h3>
-    <div id="heroBtnContainer"></div>
     <script>
     fetch('heroBtn.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('heroBtnContainer').innerHTML = data;
+        // Парсим полученный HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+
+        const heroBtnDiv = tempDiv.getElementById('heroBtnContainer');
+        document.body.appendChild(heroBtnDiv);
+
+        tempDiv.querySelectorAll('style').forEach(styleEl => {
+          document.head.appendChild(styleEl.cloneNode(true));
+        });
+
+        tempDiv.querySelectorAll('script').forEach(scriptEl => {
+          const newScript = document.createElement('script');
+          if (scriptEl.src) {
+            newScript.src = scriptEl.src; // Внешний скрипт
+          } else {
+            newScript.textContent = scriptEl.textContent; // Встроенный скрипт
+          }
+          document.body.appendChild(newScript); // Добавляем скрипты в body, чтобы исполнить их
+        });
       });
     </script>
+    <h3>test2</h3>
+
   </body>
 </html>
