@@ -2,10 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>github | Grisha</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h3>main</h3>
+    <header>
+      <h1>Привет! Я веб-разработчик</h1>
+      <p>Создаю современные сайты и приложения с использованием актуальных технологий. Предлагаю услуги разработки, консультации и поддержку. Моя цель — помочь вам реализовать проекты быстро и качественно.</p>
+    </header>
+    <section class="contacts">
+      <h2>Контакты</h2>
+      <p>Email: <span class="copy_target">grisha.tis@gmail.com</span> <a href="mailto:grisha.tis@gmail.com">ссылка на почту</a> </p>
+      <!-- <p>Телефон: +7 981 **-**-**</p> -->
+      <p>Telegram: <a href="https://t.me/Grisha178" target="_blank" rel="noopener">@Grisha178</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Тищенко Григорий</p>
+    </footer>
     <script>
     fetch('heroBtn.html')
       .then(response => response.text())
@@ -28,10 +43,85 @@
           } else {
             newScript.textContent = scriptEl.textContent; // Встроенный скрипт
           }
-          document.body.appendChild(newScript); // Добавляем скрипты в body, чтобы исполнить их
+          document.body.appendChild(newScript);
         });
       });
     </script>
+    <span class="copy_target">Текст для копирования</span>
+
+<style>
+  .copy_target {
+    position: relative;
+    cursor: pointer;
+  }
+  .copy_target .tooltip {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+  .copy_target.show-tooltip .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.copy_target').forEach(elem => {
+    const tooltip = document.createElement('span');
+    tooltip.className = 'tooltip';
+    elem.appendChild(tooltip);
+
+    let originalText = elem.textContent.trim();
+    let timeoutId;
+
+    elem.addEventListener('mouseenter', () => {
+      clearTimeout(timeoutId);
+      tooltip.textContent = 'Нажмите, что бы скопировать';
+      elem.classList.add('show-tooltip');
+    });
+
+    elem.addEventListener('mouseleave', () => {
+      clearTimeout(timeoutId);
+      elem.classList.remove('show-tooltip');
+      tooltip.textContent = '';
+    });
+
+    elem.addEventListener('click', () => {
+      navigator.clipboard.writeText(originalText).then(() => {
+        tooltip.textContent = 'Скопировано';
+        elem.classList.add('show-tooltip');
+
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          elem.classList.remove('show-tooltip');
+          tooltip.textContent = '';
+        }, 1500);
+      }).catch(() => {
+        tooltip.textContent = 'Ошибка копирования';
+        elem.classList.add('show-tooltip');
+
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          elem.classList.remove('show-tooltip');
+          tooltip.textContent = '';
+        }, 1500);
+      });
+    });
+  });
+</script>
+
+
 
   </body>
 </html>

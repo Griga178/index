@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мои услуги | Веб-разработка и технологии</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 0 15px; line-height: 1.6; color: #333; }
+    header, section, footer { margin-bottom: 40px; }
+    h1, h2 { color: #2c3e50; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin-bottom: 10px; }
+    .tech-list li, .services-list li { background: #e7f3ff; padding: 8px; border-radius: 4px; margin-bottom: 8px; }
+    .portfolio-item { border: 1px solid #ddd; padding: 12px; border-radius: 6px; margin-bottom: 15px; }
+    a.button { background-color: #2980b9; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; }
+    a.button:hover { background-color: #21618c; }
+    .contacts a { color: #2980b9; text-decoration: none; }
+    .contacts a:hover { text-decoration: underline; }
+    .chat-widget { position: fixed; bottom: 20px; right: 20px; }
+    .chat-button {
+      background-color: #27ae60; color: white; border: none; border-radius: 50%; width: 60px; height: 60px;
+      font-size: 28px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Привет! Я веб-разработчик и специалист по технологиям</h1>
+  <p>Создаю современные сайты и приложения с использованием актуальных технологий. Предлагаю услуги разработки, консультации и поддержку. Моя цель — помочь вам реализовать проекты быстро и качественно.</p>
+</header>
+
+<section>
+  <h2>Технологический стек</h2>
+  <ul class="tech-list">
+    <li>HTML5, CSS3, JavaScript (ES6+)</li>
+    <li>React, Vue.js</li>
+    <li>Node.js, Express</li>
+    <li>Python, Django</li>
+    <li>SQL, NoSQL (MongoDB)</li>
+    <li>Git, Docker, CI/CD</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Услуги</h2>
+  <ul class="services-list">
+    <li>Разработка адаптивных сайтов и SPA</li>
+    <li>Создание backend-сервисов и API</li>
+    <li>Интеграция с платежными системами и сервисами</li>
+    <li>Оптимизация производительности и SEO</li>
+    <li>Техническая поддержка и консультации</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Примеры работ</h2>
+  <div class="portfolio-item">
+    <h3>Интернет-магазин для местного бизнеса</h3>
+    <p>Создал адаптивный магазин с интеграцией платежных систем, что увеличило продажи клиента на 30%. Использованы React, Node.js и MongoDB.</p>
+    <a href="https://example-shop.ru" target="_blank" rel="noopener" class="button">Посмотреть проект</a>
+  </div>
+  <div class="portfolio-item">
+    <h3>Корпоративный портал</h3>
+    <p>Разработал внутренний портал с удобной CRM-системой для обслуживания клиентов. Использованы Django и PostgreSQL.</p>
+    <a href="https://example-corp.ru" target="_blank" rel="noopener" class="button">Посмотреть проект</a>
+  </div>
+</section>
+
+<section class="contacts">
+  <h2>Контакты</h2>
+  <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  <p>Телефон: <a href="tel:+79161234567">+7 916 123-45-67</a></p>
+  <p>Telegram: <a href="https://t.me/yourtelegram" target="_blank" rel="noopener">@yourtelegram</a></p>
+</section>
+
+<footer>
+  <p>&copy; 2024 Ваше имя</p>
+</footer>
+
+<div class="chat-widget">
+  <button class="chat-button" onclick="alert('Свяжитесь со мной через Telegram или Email!')">💬</button>
+</div>
+
+</body>
+</html>

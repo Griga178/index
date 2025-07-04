@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <script>
-    fetch('heroBtn.html')
-      .then(response => response.text())
-      .then(data => {
-        // Парсим полученный HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>React в HTML</title>
+</head>
+<body>
+  <div id="root"></div>
 
-        const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
-        document.body.appendChild(heroBtnDiv);
+  <!-- Подключение React и ReactDOM через CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-        tempDiv.querySelectorAll('style').forEach(styleEl => {
-          document.head.appendChild(styleEl.cloneNode(true));
-        });
+  <!-- ваш React-код с JSX, обрабатываемый Babel -->
+  <script type="text/babel">
+    const { useState } = React;
 
-        tempDiv.querySelectorAll('script').forEach(scriptEl => {
-          const newScript = document.createElement('script');
-          if (scriptEl.src) {
-            newScript.src = scriptEl.src; // Внешний скрипт
-          } else {
-            newScript.textContent = scriptEl.textContent; // Встроенный скрипт
-          }
-          document.body.appendChild(newScript); // Добавляем скрипты в body, чтобы исполнить их
-        });
-      });
-    </script>
-    <h3>test2</h3>
+    function App() {
+      const [count, setCount] = useState(0);
 
-  </body>
+      return (
+        <div style={{textAlign: 'center', marginTop: '50px'}}>
+          <h1>Счётчик: {count}</h1>
+          <button onClick={() => setCount(count + 1)}>Увеличить</button>
+        </div>
+      );
+    }
+
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  </script>
+</body>
 </html>

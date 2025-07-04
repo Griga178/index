@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+  line-height: 1.6;
+  color: #333;
+}
+header, section, footer {
+  margin-bottom: 40px;
+}
+h1, h2 {
+  color: #2c3e50;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 10px;
+}
+.tech-list li, .services-list li {
+  background: #e7f3ff;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.portfolio-item {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+a.button {
+  background-color: #2980b9;
+  color: white;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+a.button:hover {
+  background-color: #21618c;
+}
+.contacts a {
+  color: #2980b9;
+  text-decoration: none;
+}
+.contacts a:hover {
+  text-decoration: underline;
+}
+.chat-widget {
+  position: fixed;
+  bottom: 20px; right: 20px;
+}
+.chat-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.copy_target:hover {
+  cursor: pointer;
+  background: #e3e3e3;
+}
