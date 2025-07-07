@@ -2,34 +2,112 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>React в HTML</title>
-</head>
-<body>
-  <div id="root"></div>
+  <title>testReact</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+  .content {
+    width: 100%;
+    display: flex;             /* Используем flexbox для выравнивания */
+    flex-direction: column;    /* Вертикальное расположение элементов */
+    align-items: center;       /* Горизонтальное центрирование */
+    justify-content: center;   /* Вертикальное центрирование */
+    gap: 64px;                 /* Отступ между элементами */
+    min-height: 100vh;         /* Высота контейнера — 100% высоты окна */
+    box-sizing: border-box;    /* Учитывать padding и border в ширине */
+    padding: 20px;             /* Внешние отступы */
+    background-color: #f9f9f9; /* Доп. визуальный стиль */
+  }
+  .item{
+    min-width: 40%;          /* Минимальная ширина 40% */
+    width: auto;             /* Автоматическая ширина при необходимости */
+    text-align: left;        /* Выравнивание содержимого по левому краю */
+    /* Полоса внизу блока */
+    /* border-bottom: 2px solid grey;  */
+    padding: 32px;
+    padding-bottom: 16px;
+    box-shadow: 0 1px 16px rgba(0,0,0,0.5);  /* Тень для глубины */
+    border-radius: 20px;
+    box-sizing: border-box;  /* Учитывать padding и border в ширине */
+    background-color: white;
+  }
 
-  <!-- Подключение React и ReactDOM через CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- ваш React-код с JSX, обрабатываемый Babel -->
-  <script type="text/babel">
-    const { useState } = React;
-
-    function App() {
-      const [count, setCount] = useState(0);
-
-      return (
-        <div style={{textAlign: 'center', marginTop: '50px'}}>
-          <h1>Счётчик: {count}</h1>
-          <button onClick={() => setCount(count + 1)}>Увеличить</button>
-        </div>
-      );
+    button {
+      margin-left: 16px;
+      background-color: #1C1C1C;      /* Зеленый фон */
+      color: white;                   /* Белый текст */
+      padding: 12px 24px;             /* Отступы внутри кнопки */
+      border: none;                   /* Без рамки */
+      border-radius: 6px;             /* Скругленные углы */
+      font-size: 16px;                /* Размер шрифта */
+      cursor: pointer;                /* Курсор при наведении */
+      transition: background-color 0.3s ease, transform 0.1s ease;  /* Плавное изменение */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);  /* Тень для глубины */
+    }
+    button:hover {
+      background-color: #333333;      /* Темнее при наведении */
+      transform: scale(1.05);         /* Легкое увеличение */
     }
 
-    const rootElement = document.getElementById('root');
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(<App />);
+    button:active {
+      background-color: #0D0D0D;      /* Ещё темнее при нажатии */
+      transform: scale(0.98);         /* Небольшое "утопление" */
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="item" id="useStateBlock"></div>
+
+    <div class="item" id="useReducerBlock"></div>
+
+    <div class="item">
+      <h1>Блок с useEffect (+useState)</h1>
+      <h3>Таймер:</h3>
+      <!-- React-приложение монтируется в этот элемент -->
+      <div id="useEffectBlock"></div>
+
+    </div>
+
+    <div class="item">
+        <h1>Блок с useRef</h1>
+      <div id="useRefBlock"></div>
+    </div>
+
+    <div class="item">
+        <h1>Блок с useContext </h1>
+      <div id="useContextBlock"></div>
+    </div>
+
+  </div>
+  <script>
+  fetch('heroBtn.html')
+    .then(response => response.text())
+    .then(data => {
+      // Парсим полученный HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = data;
+
+      const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
+      document.body.appendChild(heroBtnDiv);
+
+      tempDiv.querySelectorAll('style').forEach(styleEl => {
+        document.head.appendChild(styleEl.cloneNode(true));
+      });
+
+      tempDiv.querySelectorAll('script').forEach(scriptEl => {
+        const newScript = document.createElement('script');
+        if (scriptEl.src) {
+          newScript.src = scriptEl.src; // Внешний скрипт
+        } else {
+          newScript.textContent = scriptEl.textContent; // Встроенный скрипт
+        }
+        document.body.appendChild(newScript);
+      });
+    });
   </script>
+  <script src="t2.js"></script>
+
 </body>
 </html>

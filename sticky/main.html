@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grisha | React-Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    fetch('../heroBtn.html')
+      .then(response => response.text())
+      .then(data => {
+        // Парсим полученный HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+
+        const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
+        document.body.appendChild(heroBtnDiv);
+
+        tempDiv.querySelectorAll('style').forEach(styleEl => {
+          document.head.appendChild(styleEl.cloneNode(true));
+        });
+
+        tempDiv.querySelectorAll('script').forEach(scriptEl => {
+          const newScript = document.createElement('script');
+          if (scriptEl.src) {
+            newScript.src = scriptEl.src; // Внешний скрипт
+          } else {
+            newScript.textContent = scriptEl.textContent; // Встроенный скрипт
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+  <!-- React и ReactDOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Приложение -->
+  <script src="app.js"></script>
+</body>
+</html>

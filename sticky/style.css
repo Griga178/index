@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 20px;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+.add-note-btn {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.add-note-btn:hover {
+  background: #1071d7;
+  align-self: flex-end; /* располагает кнопку справа */
+  margin-bottom: 10px;
+}
+
+/* Общие стили для всего листа */
+.notes-list {
+  list-style: none;
+  padding: 0 24px; /* отступы по бокам */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* сдвиг влево при горизонтальном заполнении */
+  gap: 12px;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Стиль каждой заметки */
+.note {
+  background: #fff;
+  border: 1px solid #dadce0; /* светлая граница как у Google */
+  border-radius: 4px; /* аккуратные прямоугольные углы */
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+/* Заголовок заметки */
+.note-title {
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-bottom: 1px solid #dadce0;
+  padding: 8px 4px;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.note-title:focus {
+  border-bottom: 2px solid #1a73e8; /* синий акцент при фокусе, как в Google */
+}
+
+/* Блок с датами */
+.note-dates {
+  font-size: 12px;
+  color: #5f6368; /* цвет текста как у Google подписях */
+}
+
+.note textarea {
+  width: 100%;
+  height: 60px;
+  resize: vertical;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Кнопка удаления */
+.note > button {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: #f44336; /* красный цвет, но мягкий */
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.note > button:hover {
+  color: #d32f2f;
+}
+
+.note > button:focus {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
