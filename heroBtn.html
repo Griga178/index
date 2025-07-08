@@ -75,10 +75,10 @@
     <!-- <a href="main.html">index</a> -->
   </button>
   <div id="list" role="menu" aria-hidden="true">
-    <a href="/main.html">index</a>
-    <a href="/test.html">test</a>
-    <a href="/test2.html">test2</a>
-    <a href="/sticky/main.html">sticky</a>
+    <a href="/index/main.html">index</a>
+    <a href="/index/test.html">test</a>
+    <a href="/index/test2.html">test2</a>
+    <a href="/index/sticky/main.html">sticky</a>
     <!-- <a href="projects/first/index2.html" role="menuitem" title="Ссылка 1">Vincent</a>
     <a href="projects/game/index2.html" role="menuitem" title="Ссылка 2">Game</a>
     <a href="projects/lazor/index.html" role="menuitem" title="Ссылка 3">lazor</a>
@@ -95,17 +95,7 @@
   const list = document.getElementById('list');
   const items = Array.from(list.querySelectorAll('a'));
   const radius = 90; // Радиус, на котором будут расположены маленькие кружки
-  // меняем адрес в зависимости от расположения
-  const links = list.querySelectorAll('a');
-  links.forEach(link => {
-    let href = link.getAttribute('href');
-    if (href && href.startsWith(curPath + "/")) {
-      // заменить "/sticky/main.html" на "./main.html"
-      const newHref = "." + href.slice(curPath.length);
-      link.setAttribute('href', newHref);
-    }
-  });
-
+  
   function positionItems() {
     const count = items.length;
     const angleStep = 360 / count;
