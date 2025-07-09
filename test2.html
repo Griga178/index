@@ -57,6 +57,8 @@
   </style>
 </head>
 <body>
+  <!-- импорт heroBtn -->
+  <script src="heroBtn/script.js"></script>
   <div class="content">
     <div class="item" id="useStateBlock"></div>
 
@@ -81,33 +83,7 @@
     </div>
 
   </div>
-  <script>
 
-  fetch('heroBtn.html')
-    .then(response => response.text())
-    .then(data => {
-      // Парсим полученный HTML
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = data;
-
-      const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
-      document.body.appendChild(heroBtnDiv);
-
-      tempDiv.querySelectorAll('style').forEach(styleEl => {
-        document.head.appendChild(styleEl.cloneNode(true));
-      });
-
-      tempDiv.querySelectorAll('script').forEach(scriptEl => {
-        const newScript = document.createElement('script');
-        if (scriptEl.src) {
-          newScript.src = scriptEl.src; // Внешний скрипт
-        } else {
-          newScript.textContent = scriptEl.textContent; // Встроенный скрипт
-        }
-        document.body.appendChild(newScript);
-      });
-    });
-  </script>
   <script src="t2.js"></script>
 
 </body>

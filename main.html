@@ -4,9 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>github | Grisha</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="amainFiles/style.css">
+    <link rel="stylesheet" href="amainFiles/copyTarget.css">
   </head>
   <body>
+
+    <script src="heroBtn/script.js"></script>
+
     <header>
       <h1>Привет! Я веб-разработчик</h1>
       <p>Создаю современные сайты и приложения с использованием актуальных технологий. Предлагаю услуги разработки, консультации и поддержку. Моя цель — помочь вам реализовать проекты быстро и качественно.</p>
@@ -21,65 +25,11 @@
     <footer>
       <p>&copy; 2025 Тищенко Григорий</p>
     </footer>
-    <script>
 
-    fetch('heroBtn.html')
-      .then(response => response.text())
-      .then(data => {
-        // Парсим полученный HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
+    
 
-        const heroBtnDiv = tempDiv.querySelector('#heroBtnContainer');
-        document.body.appendChild(heroBtnDiv);
-
-        tempDiv.querySelectorAll('style').forEach(styleEl => {
-          document.head.appendChild(styleEl.cloneNode(true));
-        });
-
-        tempDiv.querySelectorAll('script').forEach(scriptEl => {
-          const newScript = document.createElement('script');
-          if (scriptEl.src) {
-            newScript.src = scriptEl.src; // Внешний скрипт
-          } else {
-            newScript.textContent = scriptEl.textContent; // Встроенный скрипт
-          }
-          document.body.appendChild(newScript);
-        });
-      });
-    </script>
     <span class="copy_target">Текст для копирования</span>
 
-<style>
-  .copy_target {
-    position: relative;
-    cursor: pointer;
-  }
-  .copy_target .tooltip {
-    position: absolute;
-    top: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 10;
-  }
-  .copy_target.show-tooltip .tooltip {
-    opacity: 1;
-    pointer-events: auto;
-  }
-</style>
-
-<script src="copyTarget.js"></script>
-
-
-
+    <script src="amainFiles/copyTarget.js"></script>
   </body>
 </html>

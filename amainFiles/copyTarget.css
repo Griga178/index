@@ -1,0 +1,24 @@
+.copy_target {
+  position: relative;
+  cursor: pointer;
+}
+.copy_target .tooltip {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+.copy_target.show-tooltip .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
