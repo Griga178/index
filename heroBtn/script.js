@@ -20,6 +20,7 @@ container.innerHTML = `
     <a href="/index/test.html">test</a>
     <a href="/index/test2.html">test2</a>
     <a href="/index/sticky/main.html">sticky</a>
+    <a href="/index/projects/ya-wrapper/index.html">yandex disk</a>
   </div>
 `;
 
