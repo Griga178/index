@@ -1,5 +1,5 @@
 #heroBtnContainer{
-  position: fixed;
+  position: absolute;
   width: 80px;
   height: 80px;
   top: 64px;
@@ -16,9 +16,9 @@
   outline: none;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   position: absolute;
-  top: 20%;
-  left: 20%;
-  z-index: 2;
+  top: 40%;
+  left: 40%;
+  z-index: 3;
 }
 #mainBtn:hover {
   background: linear-gradient(135deg, #357ABD, #4a90e2);
@@ -44,8 +44,8 @@
 }
 #list a {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: #ff8c00;
   color: white;

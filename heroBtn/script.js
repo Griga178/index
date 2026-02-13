@@ -1,3 +1,19 @@
+/**
+* todo:
+  3 сама кнопку можно переместить в любое место
+  4 новое название кнопки
+  5 пульсация, тень крутится
+  6 в мобильной версии превращается выпадающий список закрепленный сверху
+
+* Использование:
+* 1 Добавить ссылку на проект в список меню container.innerHTML
+* 2 втавить в html файл ссылку
+*   <script src="heroBtn/script.js"></script>
+*   или
+*   <script src="../../heroBtn/script.js"></script>
+*/
+
+const rootName = 'index'
 
 let container = document.getElementById('heroBtnContainer');
 
@@ -11,68 +27,72 @@ if (container === null) {
 
 container.innerHTML = `
   <button id="mainBtn" aria-haspopup="true" aria-expanded="false" aria-label="Открыть меню">
-    hero BTN
+    Нажми
     <!-- <a href="main.html">index</a> -->
   </button>
   <div id="list" role="menu" aria-hidden="true">
-    <a class="main" href="/index/main.html">index</a>
-    <a href="/index/main0.html">main0</a>
-    <a href="/index/test.html">test</a>
-    <a href="/index/test2.html">test2</a>
-    <a href="/index/sticky/main.html">sticky</a>
-    <a href="/index/projects/ya-wrapper/index.html">yandex disk</a>
+    <a class="main" href="/${rootName}/main.html">Main</a>
+    <a href="/${rootName}/main0.html">Main0</a>
+    <a href="/${rootName}/test.html">Test</a>
+    <a href="/${rootName}/test2.html">ReactF</a>
+    <a href="/${rootName}/sticky/main.html">sticky</a>
+    <a href="/${rootName}/projects/ya-wrapper/index.html">YaDisk</a>
   </div>
 `;
 
 const list = document.getElementById('list');
 const links = list.querySelectorAll('a');
-// текущий url для корректного отображения ссылок
-const url = new URL(window.location.href)
 
+const url = new URL(window.location.href) // текущий url документа
+
+// формуруем путь относительно корневой папки
 const pathParts = url.pathname.split('/');
-const indexPos = pathParts.indexOf('index');
+const indexPos = pathParts.indexOf(rootName);
 const basePath = pathParts.slice(0, indexPos).join('/') + '/';
 
-// Обновляем href у ссылок, сохраняя часть после /index
+// Обновляем href у ссылок, сохраняя часть после /${rootName}
 links.forEach(link => {
   const hrefParts = link.getAttribute('href').split('/');
+  const afterIndexPos = hrefParts.indexOf(rootName);
 
-  const afterIndexPos = hrefParts.indexOf('index');
   if (afterIndexPos !== -1) {
     const relativePath = hrefParts.slice(afterIndexPos).join('/');
     link.href = basePath + relativePath;
   }
 });
 
+// прописываем ссылку на стили кнопки
 const link = document.createElement('link');
 link.rel = 'stylesheet';
-link.href = basePath + 'index/heroBtn/style.css';
+link.href = basePath + `${rootName}/heroBtn/style.css`;
 document.head.appendChild(link);
 
-const radius = 90; // Радиус, на котором будут расположены маленькие кружки
-
-function positionItems() {
-  const count = links.length;
-  const angleStep = 360 / count;
+// динамического расположения элементов вокруг центральной кнопки
+function positionItems(arg=true) {
+  const radius = 90; // Радиус на котором будут расположены маленькие кружки
+  const count = links.length; // количество ссылок - кружков
+  const angleStep = 360 / count; // градусы между центрами каждого круга
 
   links.forEach((item, i) => {
-  const angle = (angleStep * i - 90) * (Math.PI / 180); // -90 для начального положения сверху
-  const x = Math.cos(angle) * radius;
-  const y = Math.sin(angle) * radius;
+    // расчет координат каждого круга
+    const angle = (angleStep * i - 90) * (Math.PI / 180); // -90 для начального положения сверху
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
 
-  item.style.transitionDelay = `${i * 0.1}s`; // последовательная задержка появления
-  item.style.transformOrigin = 'center center';
-  if (container.classList.contains('open')) {
-    item.style.transform = `translate(${x}px, ${y}px) scale(1)`;
-    item.style.opacity = '1';
-  } else {
-    item.style.transform = 'translate(0, 0) scale(0.5)';
-    item.style.opacity = '0';
-    item.style.transitionDelay = '0s';
-  }
+    item.style.transitionDelay = `${i * 0.1}s`; // последовательная задержка появления
+    item.style.transformOrigin = 'center center';
+    if (container.classList.contains('open')) {
+      item.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+      item.style.opacity = '1';
+    } else {
+      item.style.transform = 'translate(0, 0) scale(0.5)';
+      item.style.opacity = '0';
+      item.style.transitionDelay = '0s';
+    }
   });
 }
 
+// обработка клика по Кнопке
 mainBtn.addEventListener('click', () => {
   const isOpen = container.classList.toggle('open');
   if (isOpen) {
@@ -82,9 +102,10 @@ mainBtn.addEventListener('click', () => {
   }
   mainBtn.setAttribute('aria-expanded', isOpen);
   list.setAttribute('aria-hidden', !isOpen);
-  positionItems();
+  positionItems(true);
 });
 
+// обработка клика вне Кнопки
 document.addEventListener('click', e => {
   if (!container.contains(e.target)) {
     container.classList.remove('open');
@@ -97,3 +118,31 @@ document.addEventListener('click', e => {
 
 // Инициализация позиций (по умолчанию закрыто)
 positionItems();
+
+// настройка перетаскивания элемента
+let isDragging = false;
+let offsetX, offsetY;
+
+// Обработчик начала перетаскивания
+container.addEventListener('mousedown', function(e) {
+isDragging = true;
+offsetX = e.clientX - this.offsetLeft;
+offsetY = e.clientY - this.offsetTop;
+});
+
+// Обработчик движения мыши
+document.addEventListener('mousemove', function(e) {
+if (!isDragging) return;
+
+const x = e.clientX - offsetX;
+const y = e.clientY - offsetY;
+
+// Устанавливаем новые координаты элемента
+container.style.left = `${x}px`;
+container.style.top = `${y}px`;
+});
+
+// Завершаем перемещение
+document.addEventListener('mouseup', () => {
+isDragging = false;
+});
