@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>github | Grisha</title>
+    <!-- <link rel="stylesheet" href="amainFiles/style.css"> -->
+    <link rel="stylesheet" href="amainFiles/copyTarget.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <script src="heroBtn/script.js"></script>
+
+    <div class="container">
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="left-section">
+          <button class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <h1 class="logo">Alexei Gribov - <span class="highlight">Data Portfolio</span></h1>
+        </div>
+
+        <div class="right-section">
+          <div class="lang-switcher">
+            <button class="lang-btn active">EN</button>
+            <span class="separator">/</span>
+            <button class="lang-btn">RU</button>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-icon">Twitter</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+            <a href="#" class="social-icon">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Section -->
+    <div class="section section-content">
+      <div class="flex-item left">
+        <div class="photo-wrapper">
+          <!-- Если фото есть, раскомментировать и указать путь -->
+          <!-- <img src="path/to/photo.jpg" alt="Фото" /> -->
+        </div>
+
+        <!-- Нижний блок с информацией -->
+        <div class="info-block">
+          <div class="header1 ">Григорий </div>
+          <div class="charBlock">
+            <div class="charName">Возраст:</div><div class="charValue datetime" id="birthDate">29 лет</div>
+          </div>
+          <div class="charBlock">
+            <div class="charName">Общий трудовой стаж: </br><div class="charValue datetime" id="date"> 11 лет</div></div>
+          </div>
+          <div class="charBlock">
+            <div class="charName">Город:</div>  <div class="charValue">Санкт-Петербург</div>
+          </div>
+
+
+            <div class="charName skillHeader">Навыки</div>
+
+            <div class="skill">Python</div>
+            <div class="skillContainer">
+              <div class="skill">matplotlib</div>
+            </div>
+
+            <div class="skill">Front-end</div>
+            <div class="skillContainer">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">javaSript</div>
+            </div>
+            <div class="skill">MS Offise</div>
+
+        </div>
+      </div>
+      <div class="flex-item right">
+        <p>Правая часть контента</p>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="section section-footer">
+      <div class="contacts">
+          <p> <span class="copy_target" title = "c 0:00 до 23:59">grisha.tis@gmail.com</span> </p>
+          <!-- <p> <span class="copy_target">+7 981 7**-**-**</span> </p> -->
+          <!-- <p> Telegram <a href="https://t.me/Grisha178" target="_blank" rel="noopener">@Grisha178</a> </p> -->
+          <p> <a href="https://t.me/Grisha178" target="_blank" rel="noopener">Telegram</a> </p>
+          <p> <a target="_blank" href="https://max.ru/u/f9LHodD0cOKS6vJR7nnaFLYSmkhAnFM9-sQUI9PAU5rRlUjc87PNMJ7vPZI">Max</a>  </p>
+
+      </div>
+
+      <div class="copyright">
+        <!-- <p>&copy; 2026 Григорий</p> -->
+        <!-- GitHub -->
+        <a href="https://github.com/griga178" target="_blank" rel="noopener" title="Обновить Griga178
+          -> Fin_P">
+          <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github">
+            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z">
+            </path>
+          </svg>
+        </a>
+
+
+      </div>
+    </div>
+      <!-- <span class="copy_target">Текст для копирования</span> -->
+    <script src="amainFiles/copyTarget.js"></script>
+    <script>
+    //  тут подсчет стажа и возраста
+      function getTitleIdx(number) {
+        const lastDigit = number % 10;
+        if (lastDigit === 1 && number !== 11) {
+          return 0;
+        } else if (lastDigit >= 2 && lastDigit <= 4 && ![12, 13, 14].includes(number)) {
+          return 1;
+        } return 2;
+      }
+      const yTitles = ['год', 'года', 'лет']
+      const mTitles = ['месяц', 'месяца', 'месяцев']
+      const dTitles = ['день', 'дня', 'дней']
+
+      const today = new Date();
+      const startDate = new Date(2014, 5, 7);
+      const birthDate = new Date(1994, 11, 6);
+
+      // Разница в миллисекундах
+      const diffMs = today - startDate;
+      const diffMsB = today - birthDate;
+
+      // Переводим в дни (1000 мс * 60 с * 60 мин * 24 ч)
+      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const diffBDays = Math.floor(diffMsB / (1000 * 60 * 60 * 24));
+
+      // Вычисление лет, месяцев и дней
+      const years = Math.floor(diffDays / 365);
+      const yearsB = Math.floor(diffBDays / 365);
+
+      const remainingDaysAfterYears = diffDays % 365;
+      const months = Math.floor(remainingDaysAfterYears / 30);
+      const remainingDaysAfterYearsB = diffBDays % 365;
+      const monthsB = Math.floor(remainingDaysAfterYearsB / 30);
+
+
+      const days = remainingDaysAfterYears % 30;
+      const daysB = remainingDaysAfterYearsB % 30;
+
+      document.getElementById('date').textContent = `
+        ${years} ${yTitles[getTitleIdx(years)]}
+        ${months} ${mTitles[getTitleIdx(months)]}
+        ${days} ${dTitles[getTitleIdx(days)]}`;
+      document.getElementById('birthDate').textContent = `
+        ${yearsB} ${yTitles[getTitleIdx(yearsB)]}
+        ${monthsB} ${mTitles[getTitleIdx(monthsB)]}
+        ${daysB} ${dTitles[getTitleIdx(daysB)]}`;
+    </script>
+  </body>
+</html>

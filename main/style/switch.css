@@ -1,0 +1,66 @@
+/* Переключатель */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 44px;
+}
+
+.theme-switch input { display: none; }
+
+.slider {
+  background-color: #343b44;
+  bottom: 0; cursor: pointer;
+  left: 0; position: absolute;
+  right: 0; top: 0;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px; content: "";
+  height: 16px; left: 4px;
+  position: absolute; transition: .4s;
+  width: 16px; border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #4db6ac; }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Секция About Me */
+.about-me {
+  background: #252a31;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.about-content p {
+  line-height: 1.7;
+  color: #ccd6f6;
+  font-size: 1.1rem;
+}
+
+.highlight-text { color: #4db6ac; font-weight: bold; }
+
+.about-tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.about-tags span {
+  background: rgba(77, 182, 172, 0.1);
+  color: #4db6ac;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}

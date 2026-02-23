@@ -4,63 +4,159 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>github | Grisha</title>
-    <!-- <link rel="stylesheet" href="amainFiles/style.css"> -->
+
     <link rel="stylesheet" href="amainFiles/copyTarget.css">
-    <link rel="stylesheet" href="main.css">
+
+    <link rel="stylesheet" href="main/style/base.css">
+    <link rel="stylesheet" href="main/style/switch.css">
+    <link rel="stylesheet" href="main/style/header.css">
+    <link rel="stylesheet" href="main/style/about.css">
+    <link rel="stylesheet" href="main/style/project.css">
+
   </head>
   <body>
 
     <script src="heroBtn/script.js"></script>
-
-    <div class="container">
     <!-- Header Section -->
-    <div class="section section-header">
-      <h1>Заголовок страницы</h1>
-    </div>
+    <header class="site-header">
+      <div class="header-container">
+        <div class="left-section">
+          <button class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <h1 class="logo">Alexei Gribov - <span class="highlight">Data Portfolio</span></h1>
+        </div>
+
+        <div class="right-section">
+          <div class="lang-switcher">
+            <button class="lang-btn active">EN</button>
+            <span class="separator">/</span>
+            <button class="lang-btn">RU</button>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-icon">Twitter</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+            <a href="#" class="social-icon">GitHub</a>
+          </div>
+
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+            <span class="theme-label">Dark Mode</span>
+          </div>
+        </div>
+
+      </div>
+    </header>
 
     <!-- Content Section -->
-    <div class="section section-content">
-      <div class="flex-item left">
-        <div class="photo-wrapper">
-          <!-- Если фото есть, раскомментировать и указать путь -->
-          <!-- <img src="path/to/photo.jpg" alt="Фото" /> -->
+    <main class="main-container">
+      <aside class="sidebar">
+        <div class="profile-section">
+          <div class="avatar-container">
+            <img src="your-photo.jpg" alt="Grigory" class="avatar">
+            <div class="dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h3>Григорий</h3>
+            <p class="data-text">Возраст: <span id="birthDate"></span></p>
+            <p class="data-text">Стаж: <span id="date"></span></p>
+            <p><span class="copy_target" title = "c 0:00 до 23:59">grisha.tis@gmail.com</span></p>
+          </div>
         </div>
 
-        <!-- Нижний блок с информацией -->
-        <div class="info-block">
-          <div class="header1 ">Григорий </div>
-          <div class="charBlock">
-            <div class="charName">Возраст:</div><div class="charValue datetime" id="birthDate">29 лет</div>
+        <div class="skills-section">
+          <h3>SKILLS</h3>
+          <div class="skill-group">
+            <span class="skill-label">DATA STACK:</span>
+            <p>Python, SQL, Pandas, Matplotlib</p>
           </div>
-          <div class="charBlock">
-            <div class="charName">Общий трудовой стаж: </br><div class="charValue datetime" id="date"> 11 лет</div></div>
+          <div class="skill-group">
+            <span class="skill-label">WEB:</span>
+            <p>HTML, CSS, JS, React</p>
           </div>
-          <div class="charBlock">
-            <div class="charName">Город:</div>  <div class="charValue">Санкт-Петербург</div>
+          <div class="skill-group">
+            <span class="skill-label">OTHER:</span>
+            <p>Git, Docker, Scraping (Scrapy/BS4)</p>
           </div>
-
-
-            <div class="charName skillHeader">Навыки</div>
-
-            <div class="skill">Python</div>
-            <div class="skillContainer">
-              <div class="skill">matplotlib</div>
-            </div>
-
-            <div class="skill">Front-end</div>
-            <div class="skillContainer">
-              <div class="skill">HTML</div>
-              <div class="skill">CSS</div>
-              <div class="skill">javaSript</div>
-            </div>
-            <div class="skill">MS Offise</div>
-
         </div>
-      </div>
-      <div class="flex-item right">
-        <p>Правая часть контента</p>
+      </aside>
+
+      <section class="content-area">
+        <section class="about-card">
+  <div class="about-header">
+    <span class="status-badge">Available for projects</span>
+    <h2 class="about-title">Data Engineering & Analytics</h2>
+  </div>
+
+  <div class="about-body">
+    <p>
+      Специализируюсь на создании <strong>полного цикла работы с данными</strong>: от написания отказоустойчивых парсеров (Scrapy, Selenium) до проектирования ETL-процессов и построения интерактивных дашбордов.
+    </p>
+    <p>
+      Мой подход: данные должны приносить пользу. Поэтому я не просто собираю JSON-файлы, а превращаю сырой поток информации в структурированные базы данных и наглядные инсайты для бизнеса.
+    </p>
+  </div>
+
+  <div class="about-highlights">
+    <div class="highlight-item">
+      <span class="h-icon">🚀</span>
+      <div class="h-text">
+        <strong>11+ лет</strong>
+        <span>Общий стаж</span>
       </div>
     </div>
+    <div class="highlight-item">
+      <span class="h-icon">📊</span>
+      <div class="h-text">
+        <strong>100к+</strong>
+        <span>Данных собрано</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <span class="h-icon">🛠️</span>
+      <div class="h-text">
+        <strong>Full-stack</strong>
+        <span>Data & Web</span>
+      </div>
+    </div>
+  </div>
+</section>
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="icon-box">🕷️</div>
+            <h3>Web Scraper for E-Commerce</h3>
+            <p>Python, BeautifulSoup, Scrapy</p>
+            <div class="stats-mini">100k+ rows collected</div>
+          </div>
+
+          <div class="project-card">
+            <div class="icon-box">📊</div>
+            <h3>Interactive Sales Dashboard</h3>
+            <p>React, D3.js, PostgreSQL</p>
+            <div class="stats-mini">Real-time updates</div>
+          </div>
+
+          <div class="project-card">
+            <div class="icon-box">⚙️</div>
+            <h3>Real-time ETL Pipeline</h3>
+            <p>Apache Kafka, Spark, Airflow</p>
+            <div class="stats-mini">99.9% Data Accuracy</div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer Section -->
     <div class="section section-footer">
@@ -84,58 +180,11 @@
           </svg>
         </a>
 
-
       </div>
     </div>
-      <!-- <span class="copy_target">Текст для копирования</span> -->
     <script src="amainFiles/copyTarget.js"></script>
-    <script>
-    //  тут подсчет стажа и возраста
-      function getTitleIdx(number) {
-        const lastDigit = number % 10;
-        if (lastDigit === 1 && number !== 11) {
-          return 0;
-        } else if (lastDigit >= 2 && lastDigit <= 4 && ![12, 13, 14].includes(number)) {
-          return 1;
-        } return 2;
-      }
-      const yTitles = ['год', 'года', 'лет']
-      const mTitles = ['месяц', 'месяца', 'месяцев']
-      const dTitles = ['день', 'дня', 'дней']
+    <script src="main/js/theme.js"></script>
+    <script src="main/js/datetime.js"></script>
 
-      const today = new Date();
-      const startDate = new Date(2014, 5, 7);
-      const birthDate = new Date(1994, 11, 6);
-
-      // Разница в миллисекундах
-      const diffMs = today - startDate;
-      const diffMsB = today - birthDate;
-
-      // Переводим в дни (1000 мс * 60 с * 60 мин * 24 ч)
-      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-      const diffBDays = Math.floor(diffMsB / (1000 * 60 * 60 * 24));
-
-      // Вычисление лет, месяцев и дней
-      const years = Math.floor(diffDays / 365);
-      const yearsB = Math.floor(diffBDays / 365);
-
-      const remainingDaysAfterYears = diffDays % 365;
-      const months = Math.floor(remainingDaysAfterYears / 30);
-      const remainingDaysAfterYearsB = diffBDays % 365;
-      const monthsB = Math.floor(remainingDaysAfterYearsB / 30);
-
-
-      const days = remainingDaysAfterYears % 30;
-      const daysB = remainingDaysAfterYearsB % 30;
-
-      document.getElementById('date').textContent = `
-        ${years} ${yTitles[getTitleIdx(years)]}
-        ${months} ${mTitles[getTitleIdx(months)]}
-        ${days} ${dTitles[getTitleIdx(days)]}`;
-      document.getElementById('birthDate').textContent = `
-        ${yearsB} ${yTitles[getTitleIdx(yearsB)]}
-        ${monthsB} ${mTitles[getTitleIdx(monthsB)]}
-        ${daysB} ${dTitles[getTitleIdx(daysB)]}`;
-    </script>
   </body>
 </html>

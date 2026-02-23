@@ -1,0 +1,56 @@
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 2rem;
+}
+
+.project-card {
+  background: #252a31;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid transparent;
+  color: #fff;
+  /* Объединяем все переходы в один список */
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Эффект при наведении (сохраняем) */
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #4db6ac;
+}
+.project-card.active {
+  border: 1px solid #4db6ac;
+  background: rgba(77, 182, 172, 0.05);
+}
+
+.icon-box {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.project-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.stats-mini {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #4db6ac;
+  font-weight: bold;
+  text-transform: uppercase;
+}

@@ -1,0 +1,132 @@
+.about-card {
+  background: #252a31;
+  border-radius: 16px;
+  padding: 35px;
+  margin-bottom: 40px;
+  border: 1px solid #343b44;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.status-badge {
+  background: rgba(77, 182, 172, 0.1);
+  color: #4db6ac;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  letter-spacing: 1px;
+}
+
+.about-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.about-body p {
+  color: #ccd6f6;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.about-body strong {
+  color: #4db6ac;
+}
+
+/* Блок с быстрыми фактами */
+.about-highlights {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #343b44;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.h-icon {
+  font-size: 1.5rem;
+}
+
+.h-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-text strong {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.h-text span {
+  color: #8892b0;
+  font-size: 0.8rem;
+}
+
+/* Состояния для светлой темы */
+body.light-theme .about-card {
+  background: #ffffff;
+  border-color: #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .about-title {
+  color: #1a1e23;
+}
+
+body.light-theme .about-body p {
+  color: #444444;
+}
+
+body.light-theme .about-body strong {
+  color: #00796b; /* Чуть более глубокий зеленый для контраста на белом */
+}
+
+/* Факты (Highlights) в светлой теме */
+body.light-theme .about-highlights {
+  border-top-color: #eeeeee;
+}
+
+body.light-theme .h-text strong {
+  color: #1a1e23;
+}
+
+body.light-theme .h-text span {
+  color: #666666;
+}
+
+/* Полоски технологий (Progress bars) */
+body.light-theme .bar-container {
+  background: #f0f0f0;
+}
+
+body.light-theme .bar-fill {
+  background: linear-gradient(90deg, #26a69a, #00897b);
+}
+
+body.light-theme .status-badge {
+  background: rgba(38, 166, 154, 0.1);
+  color: #00796b;
+}
+/* Адаптивность */
+@media (max-width: 600px) {
+  .about-highlights {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

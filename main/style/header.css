@@ -1,0 +1,103 @@
+
+.site-header {
+  height: var(--header-height);
+  background-color: #1a1e23;
+  border-bottom: 1px solid #2d343c;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: var(--text-main);
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Левая часть: Бургер и Заголовок */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--accent-cyan);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.highlight {
+  color: #8892b0; /* Цвет для подзаголовка */
+  font-weight: 400;
+}
+
+/* Правая часть: Языки и Соцсети */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.lang-switcher {
+  background: #252a31;
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #8892b0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.lang-btn.active {
+  color: var(--accent-cyan);
+}
+
+.separator {
+  color: #444;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  color: var(--accent-cyan);
+}

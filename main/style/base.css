@@ -1,0 +1,133 @@
+:root {
+  --bg-dark: #1a1e23;
+  --accent-cyan: #4db6ac;
+  --text-main: #e0e0e0;
+  --header-height: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+}
+/* Эти стили сработают, когда включится чекбокс */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #1a1e23;
+}
+
+body.light-theme .sidebar,
+body.light-theme .about-me,
+body.light-theme .project-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  color: #1a1e23;
+}
+
+body.light-theme .about-content p { color: #444; }
+body.light-theme .section-title { color: #1a1e23; }
+
+/* Основной контейнер */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 40px; /* Расстояние между сайдбаром и проектами */
+  align-items: flex-start;
+}
+
+/* Сайдбар */
+.sidebar {
+  flex: 0 0 280px; /* Фиксированная ширина */
+  background: #252a31;
+  border-radius: 16px;
+  padding: 25px;
+  position: sticky; /* Чтобы сайдбар не уплывал при скролле */
+  top: 100px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.avatar-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4db6ac;
+  background: #343b44;
+}
+
+.contact-info h3 {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+.data-text {
+  font-size: 0.85rem;
+  color: #8892b0;
+  margin: 5px 0;
+}
+
+/* Скиллы (Sidebar) */
+.skills-section {
+  margin-top: 30px;
+  border-top: 1px solid #343b44;
+  padding-top: 20px;
+}
+
+.skills-section h3 {
+  font-size: 0.8rem;
+  color: #4db6ac;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.skill-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #8892b0;
+}
+
+.skill-group p {
+  font-size: 0.9rem;
+  margin: 4px 0 15px 0;
+  color: #e0e0e0;
+}
+
+/* Правая часть */
+.content-area {
+  flex: 1; /* Занимает все пространство */
+}
+
+.section-title {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* Сетка проектов (в твоем project.css может уже быть подобное) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+    flex: none;
+  }
+}
