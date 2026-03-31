@@ -163,6 +163,7 @@ function renderProjects() {
           // Заполняем модальное окно
           modalContent.innerHTML = project.fullDescription[currentLang] || `<p>Описание недоступно</p>`;
           modal.style.display = 'flex';
+          modalContent.addEventListener('click', () => {closeModal()})
         });
     });
     document.addEventListener('keydown', (e) => {
