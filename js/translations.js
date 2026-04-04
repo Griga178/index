@@ -34,11 +34,10 @@ const translations = {
         backend_list_2: "API Integration (Binance api, Tinkoff api, REST APIs)",
         backend_list_3: "Task Automation (Selenium, PyAutoGUI) ",
 
-        data_title: "Data Processing & ETL",
+        data_title: "Python & Data Processing",
         row_2_1: "Data Processing (Pandas, NumPy)",
         row_2_2: "ETL Pipelines",
         row_2_3: "Algorithm Optimization (Multiprocessing)",
-        row_2_4: "Excel Automation (OpenPyXL)",
 
         frontend_title: "Databases & SQL",
         row_3_1: "SQL (joins, subqueries, window functions)",
@@ -54,9 +53,7 @@ const translations = {
         title_5: "Work with tools",
         row_5_1: "Git (branching, merging, PRs)",
         row_5_2: " Docker (basics: containers, Docker Compose)",
-        row_5_3: "Linux command line, bash scripting",
-        row_5_4: "Familiar with Apache Airflow, ClickHouse ",
-        row_5_5: "Yandex Cloud / S3 (basic object storage)",
+
     },
     ru: {
         avatar_alt: "Фото",
@@ -88,35 +85,29 @@ const translations = {
         location_label: "Город",
         location_value: "Санкт-Петербург",
 
-        backend_title: "Сбор данных и автоматизация",
-        backend_list_1: "Парсинг веб-сайтов (Requests, Selenium, Debugger)",
-        backend_list_2: "Интеграция API (Binance api, Tinkoff api, REST APIs)",
-        backend_list_3: "Автоматизация задач (Selenium, PyAutoGUI)",
+        backend_title: "Python, обработка данных",
+        backend_list_1: "Python (Pandas, NumPy, Multiprocessing) — обработка и оптимизация данных",
+        backend_list_2: "ETL-процессы: сбор, очистка, трансформация и загрузка данных",
+        backend_list_3: "Автоматизация работы с файлами и отчетами (OpenPyXL)",
 
-        data_title: "Обработка данных, ETL",
-        row_2_1: "Обработка данных (Pandas, NumPy)",
-        row_2_2: "Построение ETL-конвейеров",
-        row_2_3: "Оптимизация вычислений (Multiprocessing)",
-        row_2_4: "Автоматизация Excel (OpenPyXL)",
+        data_title: "Базы данных & SQL",
+        row_2_1: "SQL: сложные запросы (JOIN, CTE, оконные функции), оптимизация запросов",
+        row_2_2: "Реляционные БД: PostgreSQL, SQLite",
+        row_2_3: "ORM: SQLAlchemy",
 
+        frontend_title: "Сбор данных (Data Extraction)",
+        row_3_1: "Веб-парсинг: Requests, BeautifulSoup, Selenium",
+        row_3_2: "Интеграция API: REST APIs, работа с внешними сервисами (Binance, Tinkoff)",
+        row_3_3: "Обход антибот-защиты и работа с динамическим контентом",
 
-        frontend_title: "Базы данных, SQL",
-        row_3_1: "SQL сложные запросы (joins, вложенные запросы, оконные функии)",
-        row_3_2: "SQLAlchemy",
-        row_3_3: "Опыт работы с реляционными БД PostgreSQ / SQLite",
+        title_4: "Инструменты & Инфраструктура",
+        row_4_1: "Git: branching, merging, pull requests",
+        row_4_2: "Docker: базовая контейнеризация приложений",
+        row_4_3: "Linux/Bash: основные команды для работы с сервером",
+        row_4_4: "Yandex Cloud / S3: базовый опыт работы с облачным хранилищем",
 
-        title_4: "Анализ и визуализация",
-        row_4_1: "Первичный анализ данных (базовая статистика)",
-        row_4_2: "Построение графиков (Matplotlib, technical indicators)",
-        row_4_3: "Тестирование торговых стратегий",
-        row_4_4: "Системы генерации сигналов",
-
-        title_5: "Работа с инструментами",
-        row_5_1: "Git (branching, merging, PRs)",
-        row_5_2: "Docker (простой проект подготовки контейнера)",
-        row_5_3: "Базовые команды Linux, bash",
-        row_5_4: "Знаком с оркестрацией и колоночными БД",
-        row_5_5: "Знаком с облачным хранилищем Yandex Cloud / S3",
-
+        title_5: "Анализ данных (базовый уровень)",
+        row_5_1: "Исследовательский анализ данных (EDA), базовая статистика",
+        row_5_2: "Визуализация: Matplotlib, технические индикаторы",
     }
 };

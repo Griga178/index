@@ -180,11 +180,17 @@ function renderTagsFromProjects(projects) {
   const allTags = projects.flatMap(project => project.tags);
 
   // Оставляем только уникальные (с сохранением порядка первого появления)
-  const uniqueTags = [...new Set([...allTags])];
+  const uniqueTags = [...new Set([...allTags, 'Asyncio'])];
+  // Массив тегов, которые нужно исключить
+  const unInterestTags = ['HTML', 'CSS', 'JS', 'binance',
+  'multiprocessing', 'Requests', 'WebSocket', 'Openpyxl', 'BeautifulSoup',
+  'PyAutoGUI', 'SQLite'];
 
+  // Удаляем нежелательные теги, сохраняя порядок
+  const filteredTags = uniqueTags.filter(tag => !unInterestTags.includes(tag));
   // Очищаем контейнер и заполняем спанами
   container.innerHTML = '';
-  uniqueTags.forEach(tag => {
+  filteredTags.forEach(tag => {
     const span = document.createElement('span');
     span.className = 'tag';
     span.textContent = tag;

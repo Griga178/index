@@ -220,11 +220,11 @@
            id: 4,
            category: "optimization",
            title: {
-               en: "Responsive Landing Page",
+               en: "in rendering...",
                ru: "Кэширующий слой для исторических биржевых данных"
            },
            description: {
-               en: "Clean, fast-loading landing page built from design mockups. Semantic HTML5, CSS3, and vanilla JavaScript for optimal performance.",
+               en: "in rendering...",
                ru: `Python-библиотека, которая предоставляет унифицированный
                доступ к данным Binance и Tinkoff API с автоматическим
                кэшированием в SQLite. Управляет пропусками, гарантирует
@@ -275,7 +275,7 @@
            id: 6,
            category: "mart",
            title: {
-               en: "Responsive Landing Page",
+               en: "in rendering...",
                ru: "Аналитика и отчёты по торговым стратегиям "
            },
            description: {
@@ -289,7 +289,7 @@
                единая среда для сравнения параметров и принятия инвестиционных
                решений, ускорение анализа за счёт автоматизации`
            },
-           tags: ["Python", "pandas", "numpy", "matplotlib", "Openpyxl"],
+           tags: ["Python", "Pandas", "Numpy", "Matplotlib", "Openpyxl"],
            links: {
                github: null,
                demo: false
@@ -304,7 +304,7 @@
            id: 7,
            category: "automation",
            title: {
-               en: "Responsive Landing Page",
+               en: "in rendering...",
                ru: "Торговый бот Binance с потоковой обработкой рыночных данных"
            },
            description: {
